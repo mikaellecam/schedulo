@@ -6,7 +6,7 @@ export default function Home() {
         <p className="font-semibold">
           Hello Schedulo
         </p>
-        <Button variant="link">Click Me</Button>
+        <Button variant="default">Click Me</Button>
       </div>
 
   );
