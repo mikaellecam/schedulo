@@ -1,55 +1,36 @@
-# Application pour les emplois du temps universitaires
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-***
+## Getting Started
 
-Nous souhaitons implémenter une version simplifiée et minimale d'une application web pour accéder aux 
-emplois du temps universitaires. L'objectif de remplacer l'ADE étant trop ambitieux, nous nous concentrerons sur l'expérience
-utilisateur et la facilité d'utilisation. N'ayant pas accès aux serveurs de l'université, nous allons seulement regarder
-les emplois du temps pour la licence informatique (L2-L3, tous les sites).
+First, run the development server:
 
-Chaque utilisateur devra créer un compte, et définir quelques informations pour essayer de reproduire un compte étudiant.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-L'implémentation sera basée sur la framework Next.js, qui nous permet de travailler sur le frontend et backend de 
-notre application d'une manière simple et rapide, en utilisant des aspects de rendements sur le serveur et de React.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-***
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-### 1. Modèle de données :
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-Nous utiliserons une base de données pour stocker les comptes des utilisateurs et les emplois du temps universitaires 
-correspondants.
+## Learn More
 
-#### La base de données contiendra des tables pour :
+To learn more about Next.js, take a look at the following resources:
 
--  Utilisateurs : stockant des informations sur les comptes universitaires, y compris le nom d'utilisateur, 
-le mot de passe (haché pour la sécurité) et d'autres détails pertinents tels que la promotion.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-- Emploi du temps : contenant des informations sur les cours, tels que le nom du cours, le code du cours, l'instructeur, le numéro de la salle et la plage horaire.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-### 2. Vues :
+## Deploy on Vercel
 
-#### Le site Web comprendra les pages suivantes :
-- Page de connexion : où les utilisateurs peuvent se connecter à l'aide de leurs identifiants universitaires.
-- Page d'emploi du temps : affichant l'emploi du temps de l'utilisateur de manière claire et concise. Cette page comprendra
-également un système de filtre avec de la recherche optionelle pour afficher les cours d'une certaine manière, par exemple, de 
-pouvoir afficher seulement les cours sélectionné ou affichage par jour, semaine ou mois. 
-- Page de profil : permettant aux utilisateurs de consulter et de modifier les détails de leur compte. Y compris la possibilité
-d'ajouter des cours, de les supprimer, de les modifier. Permettant de mélanger plusieurs emplois du temps en un seul pour une
-meilleure visibilité.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-### 3. Routes et logique de contrôle :
-- `GET auth/login` : affiche la page de connexion.
-- `POST auth/login` : traite les informations d'identification (recherche et vérification de mot de passe dans la base de données) et redirige vers la page d'emploi du temps si l'authentification est réussite.
-- `GET auth/signup` : affiche la page d'inscription.
-- `POST auth/signup` : traite les informations d'inscription (création d'un nouveau utilisateur dans la base de données) et redirige vers la page d'emploi du temps si l'inscription est réussite.
-- `GET /timetable` : affiche l'emploi du temps de l'utilisateur. Page principile de l'application.
-- `GET /profile` : affiche une page qui nous montre les informations de l'utilisateur, avec des options de modification sur l'UI.
-- `POST /profile` : met à jour les informations de profil de l'utilisateur, communication avec la base de données sous la forme d'une mise à jour.
-- `GET /logout` : déconnecte l'utilisateur et redirige vers la page de connexion.
-
-### Technologies :
-
-- **Frontend** : React.js pour l'interface utilisateur, nous permattant de rendre l'application plus dynamique et interactive, 
-mais également de pouvoir réutiliser des composants, facilitant la conception et la maintenance de l'application.
-- **Backend** : Next.js pour le serveur et le routage, avec une API REST pour la communication entre le frontend et le backend.
-- **Base de données** : Implémentation en SQL, le technologie utilisée peut être PostgreSQL ou SQLite.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
