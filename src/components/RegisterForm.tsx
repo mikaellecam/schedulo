@@ -57,7 +57,7 @@ export default function RegisterForm() {
         });
 
         if (json["status"] === 201) {
-            router.push("/dashboard");
+            router.push("/timetable");
             router.refresh();
         } else {
             setErrorMessage("Internal server error");
