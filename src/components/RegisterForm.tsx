@@ -68,48 +68,55 @@ export default function RegisterForm() {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="m-auto p-4 rounded-2xl w-max h-3/6 space-y-8 flex flex-col justify-center items-center border-2">
-                <h1 className="text-3xl text-center p-4">Register</h1>
-                <FormField
-                    control={form.control}
-                    name="email"
-                    render={({field}) => (
-                        <FormItem className="m-16 space-y-2">
-                            <FormLabel className="text-base">Email</FormLabel>
-                            <FormControl>
-                                <Input {...field} className="w-[280px]" placeholder="example@email.com" {...field} />
-                            </FormControl>
-                            <FormMessage/>
-                        </FormItem>
-                    )}
-                />
-                <FormField
-                    control={form.control}
-                    name="password"
-                    render={({field}) => (
-                        <FormItem className="m-16">
-                            <FormLabel className="text-base">Password</FormLabel>
-                            <FormControl>
-                                <Input {...field} className="w-[280px]" type="password"/>
-                            </FormControl>
-                            <FormDescription>
-                                Password must be at least 6 characters.
-                            </FormDescription>
-                            <FormMessage/>
-                        </FormItem>
-                    )}
-                />
-                {errorMessage && <p className="text-red-500">{errorMessage}</p>}
-                <div className="text-sm text-gray-500">Already have an account?{" "}
-                    <a className="relative group" href="/auth/login">
-                        <span className="hover:text-black">Login</span>
-                        <span className="absolute -bottom-1 left-1/2 w-0 h-0.5 bg-black group-hover:w-1/2 group-hover:transition-all"></span>
-                        <span className="absolute -bottom-1 right-1/2 w-0 h-0.5 bg-black group-hover:w-1/2 group-hover:transition-all"></span>
-                    </a>
-                </div>
+            <div className="min-h-svh min-w-svw flex items-center justify-center">
 
-                <Button type="submit" variant="outline" className="m-4">Register</Button>
-            </form>
+                <form onSubmit={form.handleSubmit(onSubmit)}
+                      className="m-auto p-4 rounded-2xl w-max h-3/6 space-y-8 flex flex-col justify-center items-center border-2">
+                    <h1 className="text-3xl text-center p-4">Register</h1>
+                    <FormField
+                        control={form.control}
+                        name="email"
+                        render={({field}) => (
+                            <FormItem className="m-16 space-y-2">
+                                <FormLabel className="text-base">Email</FormLabel>
+                                <FormControl>
+                                    <Input {...field} className="w-[280px]"
+                                           placeholder="example@email.com" {...field} />
+                                </FormControl>
+                                <FormMessage/>
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        control={form.control}
+                        name="password"
+                        render={({field}) => (
+                            <FormItem className="m-16">
+                                <FormLabel className="text-base">Password</FormLabel>
+                                <FormControl>
+                                    <Input {...field} className="w-[280px]" type="password"/>
+                                </FormControl>
+                                <FormDescription>
+                                    Password must be at least 6 characters.
+                                </FormDescription>
+                                <FormMessage/>
+                            </FormItem>
+                        )}
+                    />
+                    {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+                    <div className="text-sm text-gray-500">Already have an account?{" "}
+                        <a className="relative group" href="/auth/login">
+                            <span className="text-blue-600 hover:text-blue-900">Login</span>
+                            <span
+                                className="absolute -bottom-1 left-1/2 w-0 h-0.5 bg-blue-900 group-hover:w-1/2 group-hover:transition-all"></span>
+                            <span
+                                className="absolute -bottom-1 right-1/2 w-0 h-0.5 bg-blue-900 group-hover:w-1/2 group-hover:transition-all"></span>
+                        </a>
+                    </div>
+
+                    <Button type="submit" variant="outline" className="m-4">Register</Button>
+                </form>
+            </div>
         </Form>
-    );
+);
 }
