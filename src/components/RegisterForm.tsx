@@ -3,7 +3,7 @@
 import {zodResolver} from "@hookform/resolvers/zod";
 import {useForm} from "react-hook-form";
 import {z} from "zod";
-import React, {FormEvent, useState} from "react";
+import React, {useState} from "react";
 import {signIn} from "next-auth/react";
 import {useRouter} from 'next/navigation'
 
@@ -66,6 +66,7 @@ export default function RegisterForm() {
         return;
     }
 
+    //TODO Add way to show password
     return (
         <Form {...form}>
             <div className="min-h-svh min-w-svw flex items-center justify-center">
