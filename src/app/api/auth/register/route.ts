@@ -10,6 +10,10 @@ export async function POST(request: Request){
         const {email, password} = await request.json();
         emailSchema.parse(email);
 
+        if(!email || !password){
+            return NextResponse.json({status: 400, message: "missing fields"});
+        }
+
         const hashedPassword = await hash(password, 10);
 
         const verifyEmailExists = await sql`SELECT * FROM users WHERE email = ${email}`;
