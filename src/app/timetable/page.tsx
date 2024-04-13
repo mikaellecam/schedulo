@@ -1,5 +1,6 @@
 import Calendar from "@/components/Calendar";
 import UserProfileModal from "@/components/UserProfileModal";
+import {Suspense} from "react";
 
 export default async function TimeTable(){
 
@@ -15,7 +16,9 @@ export default async function TimeTable(){
 
     return (
         <>
-            <UserProfileModal onClose={onClose} onOk={onOk} />
+            <Suspense>
+                <UserProfileModal onClose={onClose} onOk={onOk} />
+            </Suspense>
             <Calendar />
         </>
     );
