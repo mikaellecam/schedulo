@@ -5,15 +5,8 @@ declare module "next-auth" {
         user: {
             id: number,
             email: string,
-            first_name?: string | null,
-            last_name?: string | null,
-            faculty?: string | null,
-            department?: string | null,
-            year?: string | null,
-            campus?: string | null,
-            group?: string | null,
-            group_english?: string | null,
-            group_pppe?: string | null,
+            name?: string | null,
+            groups?: string | null,
         } & DefaultSession["user"];
     }
 }
