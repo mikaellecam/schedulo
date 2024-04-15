@@ -1,11 +1,11 @@
 .navbar{
     background-color: #f8f9fa;
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 2px solid #e9ecef;
     height: 5vh;
 }
 
-.calendarContainer{
-    margin: 2vh;
-    height: 90vh;
-    width: 70vw;
+
+.event-styling {
+    font-weight: bold;
+    font-size: 14px;
 }
