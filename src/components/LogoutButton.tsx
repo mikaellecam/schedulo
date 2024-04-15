@@ -8,7 +8,7 @@ export default function LogoutButton(){
         <form action={() => {
             signOut({callbackUrl: "/auth/login"}).then(() => {console.log("Logged out")});
         }}>
-            <Button type={"submit"}>Logout</Button>
+            <Button type={"submit"} className="my-0">Logout</Button>
         </form>
     );
 }
