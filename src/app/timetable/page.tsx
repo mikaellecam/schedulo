@@ -1,25 +1,35 @@
 import Calendar from "@/components/Calendar";
 import UserProfileModal from "@/components/UserProfileModal";
 import {Suspense} from "react";
+import {getServerSession} from "next-auth";
+import {redirect} from "next/navigation";
+import Navbar from "@/components/Navbar";
+import type {Metadata} from "next";
+
+export const metadata: Metadata = {
+    title: "Timetable",
+    description: "Main page for timetable.",
+};
 
 export default async function TimeTable(){
 
-    async function onClose(){
-        "use server";
-        console.log("Modal has closed");
-    }
-
-    async function onOk(){
-        "use server";
-        console.log("Ok has been clicked");
-    }
+    const session = await getServerSession();
+    if(!session) {redirect("/auth/login");}
+    console.log("Session user inside timetable page: ", session.user);
 
     return (
-        <>
+        <div className="h-[100vh]">
+            <Navbar/>
             <Suspense>
-                <UserProfileModal onClose={onClose} onOk={onOk} />
+                <UserProfileModal user={{
+                    name: session.user.name,
+                    groups: session.user.groups,
+                    email: session.user.email
+                }}/>
             </Suspense>
-            <Calendar />
-        </>
+            <div className="flex justify-center items-center h-[93vh]">
+                <Calendar />
+            </div>
+        </div>
     );
 }
