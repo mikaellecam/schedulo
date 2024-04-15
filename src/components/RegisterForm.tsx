@@ -48,6 +48,7 @@ export default function RegisterForm() {
 
         if(json["status"] === 400){
             setErrorMessage("Email already exists")
+            return;
         }
 
         await signIn("credentials", {
@@ -70,7 +71,6 @@ export default function RegisterForm() {
     return (
         <Form {...form}>
             <div className="min-h-svh min-w-svw flex items-center justify-center">
-
                 <form onSubmit={form.handleSubmit(onSubmit)}
                       className="m-auto p-4 rounded-2xl w-max h-3/6 space-y-8 flex flex-col justify-center items-center border-2">
                     <h1 className="text-3xl text-center p-4">Register</h1>
