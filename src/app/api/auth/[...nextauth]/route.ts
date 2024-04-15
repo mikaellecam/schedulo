@@ -1,4 +1,4 @@
-import NextAuth from 'next-auth';
+import NextAuth, {User} from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import {compare} from 'bcrypt';
 import {sql} from "@vercel/postgres";
@@ -9,15 +9,8 @@ const emailSchema = z.string().email();
 const userSchema = z.object({
     id: z.number(),
     email: z.string().email(),
-    first_name: z.string().optional().nullable(),
-    last_name: z.string().optional().nullable(),
-    faculty: z.string().optional().nullable(),
-    department: z.string().optional().nullable(),
-    year: z.string().optional().nullable(), //L2 or L3 as the year
-    campus: z.string().optional().nullable(),
-    group: z.string().optional().nullable(),
-    group_english: z.string().optional().nullable(),
-    group_pppe: z.string().optional().nullable(),
+    name: z.string().optional().nullable(),
+    groups: z.string().optional().nullable(),
 });
 
 
@@ -48,12 +41,15 @@ const handler = NextAuth({
 
                     const passwordCorrect = await compare(credentials?.password || '', user.password);
 
+                    console.log("User id: ", user.id);
+
                     if(passwordCorrect){
                         return {
                             id: user.id,
                             email: user.email,
-                            ...user,
-                        };
+                            name: user.name,
+                            groups: user.groups
+                        } as User;
                     }
                     return null;
                 } catch (e){
@@ -63,24 +59,34 @@ const handler = NextAuth({
         })
     ],
     callbacks: {
-        async jwt({token, user}){
+        async jwt({token, user, trigger, session}){
             if(user){
+                console.log("user in jwt callback: ", user);
                 const parsedUser= userSchema.parse(user);
                 token.id = parsedUser.id;
                 token.email = parsedUser.email;
-                parsedUser.campus = "LUMINY";
-                Object.assign(token, parsedUser);
+                token.name = parsedUser.name;
+                token.groups = parsedUser.groups;
             }
+            if(trigger === "update" && session) {
+                token = {...token, user : session};
+                return token;
+            }
+            console.log(token);
             return token;
         },
-        async session({session, token}){
+        async session({session, token, user}){
+            console.log("token in session callback: ", token);
             if(token){
                 const parsedToken = userSchema.parse(token);
-                session.user = {...parsedToken};
+                session.user.id = parsedToken.id;
+                session.user.name = parsedToken.name;
+                session.user.email = parsedToken.email;
+                session.user.groups = parsedToken.groups;
             }
             return session;
         }
     },
 });
 
-export { handler as GET, handler as POST };
+export { handler as GET, handler as POST, handler as update };
