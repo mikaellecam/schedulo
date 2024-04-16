@@ -5,7 +5,6 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import iCalendarPlugin from "@fullcalendar/icalendar";
-import "../styles/timetable.css";
 import {useEffect, useState} from "react";
 import {Skeleton} from "@/components/ui/skeleton";
 
