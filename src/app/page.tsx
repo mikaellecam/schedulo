@@ -1,11 +1,11 @@
-import {getServerSession} from "next-auth";
+import {auth} from "@/auth";
 import {redirect} from "next/navigation";
 
 export default async function Home() {
-  const session = await getServerSession();
+  const session = await auth();
   if(session) {
     console.log(session.user.name);
-    if(session.user.name === undefined)
+    if(session.user.name === "")
       redirect("/timetable?showDialog=y")
     else
       redirect("/timetable");
