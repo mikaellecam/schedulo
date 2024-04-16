@@ -1,9 +1,9 @@
 import Image from "next/image";
-import {getServerSession} from "next-auth";
+import {auth} from "@/auth";
 import {redirect} from "next/navigation";
 
 export default async function UserProfile() {
-    const session = await getServerSession();
+    const session = await auth();
     if(!session) redirect("/auth/login");
 
     const name = session.user.name ? session.user.name : "John Doe";
