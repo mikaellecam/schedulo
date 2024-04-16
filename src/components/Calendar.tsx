@@ -4,13 +4,13 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
-import iCalendarPlugin from "@fullcalendar/icalendar";
 import {useEffect, useState} from "react";
 import {Skeleton} from "@/components/ui/skeleton";
 
 export default function Calendar(){
     const [events, setEvents] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [startingView, setStartingView] = useState("timeGridWeek");
 
     useEffect( () => {
         fetch("/api/calendar")
@@ -25,6 +25,12 @@ export default function Calendar(){
            });
         }, []);
 
+    useEffect(() => {
+        if(window.innerWidth < 768){
+            setStartingView("timeGridDay");
+        }
+    }, []);
+
     return (
         <div className="my-0 mx-auto w-[80vw]">
             {loading ? (
@@ -34,16 +40,33 @@ export default function Calendar(){
                     contentHeight={"auto"}
                     handleWindowResize={true}
 
+                    headerToolbar={
+                        {
+                            left: "prev,next today",
+                            center: "title",
+                            right: "timeGridWeek,timeGridDay"
+                        }
+                    }
+
                     plugins = {[
                         timeGridPlugin,
                         dayGridPlugin,
                         interactionPlugin,
-                        iCalendarPlugin ]}
+                    ]}
 
-                    initialView = "timeGridWeek"
+                    initialView = {startingView}
+
+                    eventClick = { (info) => {
+                        info.jsEvent.preventDefault();
+
+                        if(info.event.url)
+                            window.open(info.event.url)
+                    }}
 
                     weekends={false}
                     allDaySlot={false}
+
+                    nowIndicator={true}
 
                     slotMinTime={"08:00:00"}
                     slotMaxTime={"20:00:00"}
