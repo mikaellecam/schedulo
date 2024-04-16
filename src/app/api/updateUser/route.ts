@@ -1,19 +1,18 @@
 import {NextResponse} from "next/server";
 import {sql} from "@vercel/postgres";
-import {z} from "zod";
-import {getServerSession} from "next-auth";
-import {update} from "../auth/[...nextauth]/route";
-import {hash} from "bcrypt";
+import {dataBaseUserSchema, passwordSchema} from "@/lib/definitions";
+import {auth} from "@/auth";
+import {hash} from "bcryptjs";
 
 
 export async function POST(request: Request) {
     try {
-        const session = await getServerSession();
+        const session = await auth();
         if(!session) return NextResponse.json({status: 401, message: "unauthorized"});
 
-        const {name, groups, email, newPassword} = await request.json();
+        const json = await request.json();
 
-        z.string().email().parse(email);
+        const {name, groups, email, newPassword} = dataBaseUserSchema.parse(json);
 
         console.log("Request attributes : ", name, groups, email, newPassword);
 
@@ -32,8 +31,10 @@ export async function POST(request: Request) {
             `;
 
 
-        if (newPassword !== "" && z.string().min(6).parse(newPassword)) {
+        let usingNewPassword = false;
+        if (newPassword !== "" && passwordSchema.parse(newPassword)) {
             const hashedNewPassword = await hash(newPassword, 10);
+            usingNewPassword = true;
 
             await sql`
                 UPDATE users
@@ -43,7 +44,7 @@ export async function POST(request: Request) {
         }
         console.log("Session before updating: ", session.user);
 
-        await update({...session.user, name: name, email: email, groups: groups});
+        //await unstable_update(session);
 
         console.log("Session after updating: ", session.user);
 
