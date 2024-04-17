@@ -24,6 +24,15 @@ export default function Dialog({ title, children} : Props){
     }, [showDialog]);
 
 
+    const handleClose = () => {
+        dialogRef.current?.close();
+
+        const newSearchParams = new URLSearchParams(window.location.search);
+        newSearchParams.delete('showDialog'); // Remove the showDialog parameter
+        const newUrl = `${window.location.pathname}?${newSearchParams.toString()}`;
+        window.history.replaceState({}, '', newUrl);
+    }
+
 
     return showDialog === 'y'
         ? (
@@ -32,7 +41,7 @@ export default function Dialog({ title, children} : Props){
                 <div className="w-[750px] h-fit max-w-fullbg-gray-200 flex flex-col">
                     <div className="flex flex-row justify-between items-center mb-4 px-5 border-b-2 border-gray-800">
                         <h1 className="text-2xl my-4">{title}</h1>
-                        <Button variant="outline" onClick={() => {dialogRef.current?.close()}}>
+                        <Button variant="outline" onClick={handleClose}>
                             <Image src="/closeModalIcon.svg" alt="Closing icon for modal" width={30} height={30}/>
                         </Button>
                     </div>
