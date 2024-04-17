@@ -10,7 +10,6 @@ import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/
 import Image from "next/image";
 import {z} from "zod";
 import {zodResolver} from "@hookform/resolvers/zod";
-import { useSession } from "next-auth/react";
 
 import React, {useState} from "react";
 import {useForm} from "react-hook-form";
@@ -32,8 +31,6 @@ const formSchema = z.object({
 
 export default function UserProfileModal({user} : Props) {
     const [errorMessage, setErrorMessage] = useState("");
-    const {data: session, update} = useSession();
-
 
     const form = useForm<z.infer<typeof formSchema>>({
        resolver: zodResolver(formSchema),
@@ -62,9 +59,6 @@ export default function UserProfileModal({user} : Props) {
             return;
         }
 
-        await update({...session, name: name, groups: groups, email: email});
-
-        console.log(session);
 
         toast({title: "User information updated", duration: 5000});
         return;
