@@ -16,7 +16,7 @@ export default async function TimeTable(){
 
     const session = await auth();
     if(!session) {redirect("/auth/login");}
-    console.log("Session user inside timetable page: ", session.user);
+    //console.log("Session user inside timetable page: ", session.user);
 
     return (
         <div className="h-fit">
