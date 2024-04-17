@@ -20,16 +20,14 @@ export default async function TimeTable(){
 
     return (
         <div className="h-fit">
-            <SessionProvider>
-                <Navbar/>
-                <Suspense>
-                    <UserProfileModal user={{
-                        name: session.user.name,
-                        groups: session.user.groups,
-                        email: session.user.email
-                    }}/>
-                </Suspense>
-            </SessionProvider>
+            <Navbar/>
+            <Suspense>
+                <UserProfileModal user={{
+                    name: session.user.name,
+                    groups: session.user.groups,
+                    email: session.user.email
+                }}/>
+            </Suspense>
             <div className="flex justify-center items-center h-fit m-[3vh] mx-auto">
                 <Calendar />
             </div>
