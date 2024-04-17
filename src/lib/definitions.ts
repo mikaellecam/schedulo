@@ -12,7 +12,7 @@ export const userSchema = z.object({
 
 export const dataBaseUserSchema = z.object({
     email: z.string().email(),
-    newPassword: z.string().min(6),
+    newPassword: z.string(),
     name: z.string(),
     groups: z.string(),
 });
