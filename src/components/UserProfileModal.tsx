@@ -10,15 +10,15 @@ import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/
 import Image from "next/image";
 import {z} from "zod";
 import {zodResolver} from "@hookform/resolvers/zod";
+import { useSession } from "next-auth/react";
 
 import React, {useState} from "react";
 import {useForm} from "react-hook-form";
 
-
 type Props = {
     user: {
-        name: string | undefined | null,
-        groups: string | undefined | null,
+        name: string,
+        groups: string,
         email: string,
     },
 };
@@ -27,11 +27,13 @@ const formSchema = z.object({
     name: z.string().min(1, "Cannot be empty"),
     groups: z.string().min(1, "Cannot be empty"),
     email: z.string().email("Cannot be empty"),
-    newPassword: z.string().min(6, "Password must be at least 6 characters.").optional(),
+    newPassword: z.string()
 });
 
 export default function UserProfileModal({user} : Props) {
     const [errorMessage, setErrorMessage] = useState("");
+    const {data: session, update} = useSession();
+
 
     const form = useForm<z.infer<typeof formSchema>>({
        resolver: zodResolver(formSchema),
@@ -60,13 +62,16 @@ export default function UserProfileModal({user} : Props) {
             return;
         }
 
+        await update({...session, name: name, groups: groups, email: email});
+
+        console.log(session);
+
         toast({title: "User information updated", duration: 5000});
         return;
-
     }
 
     return (
-        <Dialog title="Please complete your user information">
+        <Dialog title="User Information">
             <Form {...form}>
                 <form id="userProfileModalForm" className="flex flex-row justify-evenly items-center w-full" onSubmit={form.handleSubmit(handleSubmit)}>
                     <div className="w-[90px] flex justify-center">
