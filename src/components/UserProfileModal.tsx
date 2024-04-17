@@ -94,7 +94,7 @@ export default function UserProfileModal({user} : Props) {
                                 <FormItem>
                                     <FormLabel>Groups:</FormLabel>
                                     <FormControl>
-                                        <Input {...field} type="text" placeholder="2 2 3 3" className="border-2 border-gray-800" />
+                                        <Input {...field} type="text" placeholder="TD TP Ang PPPE (2 2 3 3)" className="border-2 border-gray-800" />
                                     </FormControl>
                                     <FormMessage/>
                                 </FormItem>
