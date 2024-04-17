@@ -7,7 +7,7 @@ export default async function UserProfile() {
     const session = await auth();
     if(!session) redirect("/auth/login");
 
-    const name = session.user.name ? session.user.name : "John Doe";
+    const name = session.user.name ? session.user.name : "";
 
     return (
         <Link className="flex items-center" href={"/timetable?showDialog=y"}>
