@@ -5,24 +5,28 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import {useEffect, useState} from "react";
+import {Button} from "@/components/ui/button";
 
 export default function Calendar(){
     const [events, setEvents] = useState([]);
     const [loading, setLoading] = useState(true);
     const [startingView, setStartingView] = useState("timeGridWeek");
+    const [loadingMessage, setLoadingMessage] = useState("Fetching data");
+    const [tryAgain, setTryAgain] = useState(false);
 
-    useEffect( () => {
-        fetch("/api/calendar")
-           .then(response => response.json())
-           .then(json => {
-                setEvents(json.data);
-                setLoading(false);
-           })
-           .catch(error => {
-                console.error("Error fetching events :", error);
-                setLoading(false);
-           });
-        }, []);
+    useEffect(() => {
+            fetch("/api/calendar")
+                .then(response => response.json())
+                .then(json => {
+                    setEvents(json.data);
+                    setLoading(false);
+                })
+                .catch(error => {
+                    console.error("Error fetching events :", error);
+                    setLoadingMessage("Error fetching data");
+                    setTryAgain(true);
+                });
+    }, []);
 
     useEffect(() => {
         if(window.innerWidth < 768){
@@ -30,10 +34,21 @@ export default function Calendar(){
         }
     }, []);
 
+
     return (
         <div className="w-[85vw]">
             {loading ? (
-                <h3 className="text-center">Fetching data</h3>
+                <>
+                    <h3 className="text-center">{loadingMessage}</h3>
+                    {tryAgain ? (
+                            <Button onClick={() => {
+                                setTryAgain(false);
+                                setLoadingMessage("Fetching data");
+                                window.location.reload()}}>
+                                Try Again
+                            </Button>)
+                            : null}
+                </>
             ) : (
                 <FullCalendar
                     contentHeight={"auto"}
@@ -54,13 +69,6 @@ export default function Calendar(){
                     ]}
 
                     initialView = {startingView}
-
-                    eventClick = { (info) => {
-                        info.jsEvent.preventDefault();
-
-                        if(info.event.url)
-                            window.open(info.event.url)
-                    }}
 
                     weekends={false}
                     allDaySlot={false}
