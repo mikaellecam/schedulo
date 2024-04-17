@@ -5,6 +5,7 @@ import {auth} from "@/auth";
 import {redirect} from "next/navigation";
 import Navbar from "@/components/Navbar";
 import type {Metadata} from "next";
+import {SessionProvider} from "next-auth/react";
 
 export const metadata: Metadata = {
     title: "Timetable",
@@ -18,16 +19,18 @@ export default async function TimeTable(){
     console.log("Session user inside timetable page: ", session.user);
 
     return (
-        <div className="h-[100vh]">
-            <Navbar/>
-            <Suspense>
-                <UserProfileModal user={{
-                    name: session.user.name,
-                    groups: session.user.groups,
-                    email: session.user.email
-                }}/>
-            </Suspense>
-            <div className="flex justify-center items-center h-[93vh]">
+        <div className="h-fit">
+            <SessionProvider>
+                <Navbar/>
+                <Suspense>
+                    <UserProfileModal user={{
+                        name: session.user.name,
+                        groups: session.user.groups,
+                        email: session.user.email
+                    }}/>
+                </Suspense>
+            </SessionProvider>
+            <div className="flex justify-center items-center h-fit m-[3vh] mx-auto">
                 <Calendar />
             </div>
         </div>
