@@ -5,7 +5,6 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import {useEffect, useState} from "react";
-import {Skeleton} from "@/components/ui/skeleton";
 
 export default function Calendar(){
     const [events, setEvents] = useState([]);
@@ -32,9 +31,9 @@ export default function Calendar(){
     }, []);
 
     return (
-        <div className="my-0 mx-auto w-[80vw]">
+        <div className="w-[85vw]">
             {loading ? (
-                <Skeleton className="h-full w-full rounded-xl"/>
+                <h3 className="text-center">Fetching data</h3>
             ) : (
                 <FullCalendar
                     contentHeight={"auto"}
@@ -69,7 +68,7 @@ export default function Calendar(){
                     nowIndicator={true}
 
                     slotMinTime={"08:00:00"}
-                    slotMaxTime={"20:00:00"}
+                    slotMaxTime={"19:00:00"}
 
                     editable={true}
                     selectable={true}
