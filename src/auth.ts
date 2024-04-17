@@ -34,7 +34,6 @@ interface ExtendedJWT extends JWT {
 export const {
     handlers: { GET, POST},
     auth,
-    signIn,
 } = NextAuth({
     session: {
         strategy: 'jwt',
@@ -64,8 +63,6 @@ export const {
 
                     const passwordCorrect = await compare(parsedPassword, resultRow.password);
 
-                    //console.log("User id: ", resultRow.id);
-
                     if(passwordCorrect){
                         return {
                             id: resultRow.id,
@@ -84,20 +81,16 @@ export const {
     callbacks: {
         async jwt({token, user}): Promise<ExtendedJWT>{
             if(user){
-                //console.log("user in jwt callback: ", user);
                 const parsedUser= userSchema.parse(user);
                 token.id = parsedUser.id;
                 token.email = parsedUser.email;
                 token.name = parsedUser.name;
                 token.groups = parsedUser.groups;
             }
-            //console.log(token);
             return token as ExtendedJWT;
         },
         async session({session, token}){
-            //console.log("token in session callback: ", token);
             if(token){
-                //const parsedToken = userSchema.parse(token);
                 session.user.id = token.id as string;
                 session.user.name = token.name as string;
                 session.user.email = token.email as string;
