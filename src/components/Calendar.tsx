@@ -4,8 +4,11 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
+
 import {useEffect, useState} from "react";
 import {Button} from "@/components/ui/button";
+import {EventMountArg} from "@fullcalendar/core";
+import Tooltip from "tooltip.js";
 
 export default function Calendar(){
     const [events, setEvents] = useState([]);
@@ -33,6 +36,21 @@ export default function Calendar(){
             setStartingView("timeGridDay");
         }
     }, []);
+
+    const handleMountedEvent = (info: EventMountArg) => {
+        new Tooltip(info.el, {
+            title: info.event.extendedProps.description,
+            placement: 'top',
+            trigger: 'click',
+            container: 'body',
+            template: `
+                <div class="tooltip bg-white text-gray-800 border border-gray-300 shadow-lg rounded-lg p-2 max-w-xs z-50 overflow-x-hidden">
+                    <div class="tooltip-arrow"></div>
+                    <div class="tooltip-inner"></div>
+                </div>
+            `,
+        });
+    }
 
 
     return (
@@ -69,6 +87,8 @@ export default function Calendar(){
                     ]}
 
                     initialView = {startingView}
+
+                    eventDidMount={(info) => handleMountedEvent(info)}
 
                     weekends={false}
                     allDaySlot={false}
