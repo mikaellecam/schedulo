@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a2d00a12-13e6-4077-b788-fb1ca56225fd" name="Changes" comment="added Analytics from vercel" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="newAuth" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "mikaellecam"
+  }
+}]]></component>
+  <component name="GitLabMergeRequestFiltersHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPENED&quot;,
+    &quot;assignee&quot;: {
+      &quot;type&quot;: &quot;org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue&quot;,
+      &quot;username&quot;: &quot;l22005691&quot;,
+      &quot;fullname&quot;: &quot;LE CAM Mikael&quot;
+    }
+  }
+}</component>
+  <component name="GitLabMergeRequestsSettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;first&quot;: &quot;https://etulab.univ-amu.fr/l22005691/projectweb_lecam_taurel.git&quot;,
+    &quot;second&quot;: &quot;df74a966-23b2-440e-9c70-63846de36353&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/mikaellecam/schedulo.git",
+    "accountId": "52ef6f93-3d8d-4a2a-835f-2185ec97c4c1"
+  }
+}]]></component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2eJi8NxQTTp9fC4WFTgjma9KPau" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mikae/Documents/University/L2 Info/S4/Web/projectweb_lecam_taurel/src/app/auth/login&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\mikae\\Documents\\University\\L2 Info\\S4\\Web\\projectweb_lecam_taurel\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mikae\Documents\University\L2 Info\S4\Web\projectweb_lecam_taurel\src\app\auth\login" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mikae\Documents\University\L2 Info\S4\Web\projectweb_lecam_taurel\public" />
+      <recent name="C:\Users\mikae\Documents\University\L2 Info\S4\Web\projectweb_lecam_taurel" />
+      <recent name="C:\Users\mikae\Documents\University\L2 Info\S4\Web\projectweb_lecam_taurel\src" />
+      <recent name="C:\Users\mikae\Documents\University\L2 Info\S4\Web\projectweb_lecam_taurel\@types" />
+      <recent name="C:\Users\mikae\Documents\University\L2 Info\S4\Web\projectweb_lecam_taurel\src\components" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.18034.50" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a2d00a12-13e6-4077-b788-fb1ca56225fd" name="Changes" comment="" />
+      <created>1711628921954</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1711628921954</updated>
+      <workItem from="1711628923034" duration="538000" />
+      <workItem from="1711635440717" duration="54000" />
+      <workItem from="1711635505020" duration="10181000" />
+      <workItem from="1711794529769" duration="600000" />
+      <workItem from="1711797172836" duration="1054000" />
+      <workItem from="1711798242659" duration="24000" />
+      <workItem from="1711798278676" duration="2529000" />
+      <workItem from="1711809741516" duration="4839000" />
+      <workItem from="1711920884861" duration="1387000" />
+      <workItem from="1711967604834" duration="2853000" />
+      <workItem from="1711998842915" duration="1057000" />
+      <workItem from="1712007853967" duration="3063000" />
+      <workItem from="1712092111283" duration="1751000" />
+      <workItem from="1712178138887" duration="5987000" />
+      <workItem from="1712221601993" duration="3118000" />
+      <workItem from="1712240769636" duration="878000" />
+      <workItem from="1712337479344" duration="3627000" />
+      <workItem from="1712606973251" duration="3467000" />
+      <workItem from="1712694421640" duration="4280000" />
+      <workItem from="1712778291944" duration="5430000" />
+      <workItem from="1712822168070" duration="5787000" />
+      <workItem from="1712845665986" duration="1187000" />
+      <workItem from="1712937593236" duration="13055000" />
+      <workItem from="1713000353853" duration="8876000" />
+      <workItem from="1713027714250" duration="13487000" />
+      <workItem from="1713122790430" duration="7563000" />
+      <workItem from="1713167544865" duration="5141000" />
+      <workItem from="1713180688508" duration="112000" />
+      <workItem from="1713186148103" duration="1112000" />
+      <workItem from="1713189625016" duration="919000" />
+      <workItem from="1713195077611" duration="13718000" />
+      <workItem from="1713245415255" duration="2664000" />
+      <workItem from="1713249760416" duration="8887000" />
+      <workItem from="1713275415424" duration="1291000" />
+      <workItem from="1713290220580" duration="18727000" />
+      <workItem from="1713344675259" duration="2491000" />
+      <workItem from="1713360855145" duration="6064000" />
+      <workItem from="1713371058711" duration="889000" />
+      <workItem from="1714064077458" duration="951000" />
+      <workItem from="1714066950387" duration="263000" />
+      <workItem from="1723749889976" duration="67000" />
+    </task>
+    <task id="LOCAL-00052" summary="new avatars.github remote pattern">
+      <option name="closed" value="true" />
+      <created>1713216483441</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1713216483442</updated>
+    </task>
+    <task id="LOCAL-00053" summary="refactored session.user typing">
+      <option name="closed" value="true" />
+      <created>1713216516509</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1713216516509</updated>
+    </task>
+    <task id="LOCAL-00054" summary="added ical.js library">
+      <option name="closed" value="true" />
+      <created>1713216562460</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1713216562460</updated>
+    </task>
+    <task id="LOCAL-00055" summary="session logic and additional styling changes">
+      <option name="closed" value="true" />
+      <created>1713216611426</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1713216611426</updated>
+    </task>
+    <task id="LOCAL-00056" summary="session naming refactor">
+      <option name="closed" value="true" />
+      <created>1713216631384</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1713216631384</updated>
+    </task>
+    <task id="LOCAL-00057" summary="additional stop case for submit method">
+      <option name="closed" value="true" />
+      <created>1713216670772</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1713216670773</updated>
+    </task>
+    <task id="LOCAL-00058" summary="api route for fetching .ics file and extracting events">
+      <option name="closed" value="true" />
+      <created>1713216704470</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1713216704471</updated>
+    </task>
+    <task id="LOCAL-00059" summary="user refactoring and additional callback logic">
+      <option name="closed" value="true" />
+      <created>1713216729024</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1713216729024</updated>
+    </task>
+    <task id="LOCAL-00060" summary="updateUser route for handling modal confirmation">
+      <option name="closed" value="true" />
+      <created>1713216756611</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1713216756611</updated>
+    </task>
+    <task id="LOCAL-00061" summary="added skeletal component for async fallback">
+      <option name="closed" value="true" />
+      <created>1713216787979</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1713216787979</updated>
+    </task>
+    <task id="LOCAL-00062" summary="styling refactoring">
+      <option name="closed" value="true" />
+      <created>1713216805574</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1713216805574</updated>
+    </task>
+    <task id="LOCAL-00063" summary="added toast element from shadcn">
+      <option name="closed" value="true" />
+      <created>1713216823014</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1713216823014</updated>
+    </task>
+    <task id="LOCAL-00064" summary="added session logic to show correct information">
+      <option name="closed" value="true" />
+      <created>1713216837408</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1713216837408</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Implemented shadcn Form usage, with zod confirmation and submission logic">
+      <option name="closed" value="true" />
+      <created>1713216880764</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1713216880764</updated>
+    </task>
+    <task id="LOCAL-00066" summary="added auth main file">
+      <option name="closed" value="true" />
+      <created>1713306345268</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1713306345268</updated>
+    </task>
+    <task id="LOCAL-00067" summary="removed css import">
+      <option name="closed" value="true" />
+      <created>1713306356398</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1713306356398</updated>
+    </task>
+    <task id="LOCAL-00068" summary="added new definitions for ease of use">
+      <option name="closed" value="true" />
+      <created>1713306401203</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1713306401203</updated>
+    </task>
+    <task id="LOCAL-00069" summary="middleware implementation from docs">
+      <option name="closed" value="true" />
+      <created>1713306420815</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1713306420815</updated>
+    </task>
+    <task id="LOCAL-00070" summary="removed previous session interface">
+      <option name="closed" value="true" />
+      <created>1713306455432</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1713306455432</updated>
+    </task>
+    <task id="LOCAL-00071" summary="addition of bcryptjs and upgrading to next-auth v5">
+      <option name="closed" value="true" />
+      <created>1713306484803</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1713306484803</updated>
+    </task>
+    <task id="LOCAL-00072" summary="removed css external file">
+      <option name="closed" value="true" />
+      <created>1713306500758</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1713306500758</updated>
+    </task>
+    <task id="LOCAL-00073" summary="refactored getServerSession into simply auth() due to next-auth v5">
+      <option name="closed" value="true" />
+      <created>1713306539341</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1713306539341</updated>
+    </task>
+    <task id="LOCAL-00074" summary="implementation of additional calendars for complete parsing">
+      <option name="closed" value="true" />
+      <created>1713306560457</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1713306560457</updated>
+    </task>
+    <task id="LOCAL-00075" summary="removal of logic (went into auth.ts) only exporting GET and POST">
+      <option name="closed" value="true" />
+      <created>1713306585553</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1713306585553</updated>
+    </task>
+    <task id="LOCAL-00076" summary="updating register to remove null values from app">
+      <option name="closed" value="true" />
+      <created>1713306611387</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1713306611387</updated>
+    </task>
+    <task id="LOCAL-00077" summary="refactored imports and schema validations">
+      <option name="closed" value="true" />
+      <created>1713306675311</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1713306675311</updated>
+    </task>
+    <task id="LOCAL-00078" summary="refactored getServerSession() into auth() due to next-auth v5">
+      <option name="closed" value="true" />
+      <created>1713306696949</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1713306696949</updated>
+    </task>
+    <task id="LOCAL-00079" summary="implemented initial view dependent on screen width">
+      <option name="closed" value="true" />
+      <created>1713308007135</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1713308007135</updated>
+    </task>
+    <task id="LOCAL-00080" summary="added boilerplate updating (doesn't work)">
+      <option name="closed" value="true" />
+      <created>1713312577688</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1713312577688</updated>
+    </task>
+    <task id="LOCAL-00081" summary="added Link on the user profile to access modal">
+      <option name="closed" value="true" />
+      <created>1713312594382</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1713312594382</updated>
+    </task>
+    <task id="LOCAL-00082" summary="removed test logs">
+      <option name="closed" value="true" />
+      <created>1713312627374</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1713312627374</updated>
+    </task>
+    <task id="LOCAL-00083" summary="remove test log">
+      <option name="closed" value="true" />
+      <created>1713312646605</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1713312646605</updated>
+    </task>
+    <task id="LOCAL-00084" summary="new SessionProvider and new styling">
+      <option name="closed" value="true" />
+      <created>1713312663161</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1713312663161</updated>
+    </task>
+    <task id="LOCAL-00085" summary="added margin to the nav">
+      <option name="closed" value="true" />
+      <created>1713312684553</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1713312684553</updated>
+    </task>
+    <task id="LOCAL-00086" summary="new handleclose that resets the search params when closing the modal">
+      <option name="closed" value="true" />
+      <created>1713312715914</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1713312715914</updated>
+    </task>
+    <task id="LOCAL-00087" summary="removed mandatory input of password">
+      <option name="closed" value="true" />
+      <created>1713312738036</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1713312738036</updated>
+    </task>
+    <task id="LOCAL-00088" summary="removed skeleton and modified sizing">
+      <option name="closed" value="true" />
+      <created>1713312769203</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1713312769203</updated>
+    </task>
+    <task id="LOCAL-00089" summary="removed unused signIn and commented code">
+      <option name="closed" value="true" />
+      <created>1713312793939</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1713312793939</updated>
+    </task>
+    <task id="LOCAL-00090" summary="added sharp package (demanded by next for optimizations)">
+      <option name="closed" value="true" />
+      <created>1713346890044</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1713346890045</updated>
+    </task>
+    <task id="LOCAL-00091" summary="removed SessionProvider (wrong implementation)">
+      <option name="closed" value="true" />
+      <created>1713346919039</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1713346919039</updated>
+    </task>
+    <task id="LOCAL-00092" summary="added try again button if unsuccessful load of the calendar">
+      <option name="closed" value="true" />
+      <created>1713346961054</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1713346961054</updated>
+    </task>
+    <task id="LOCAL-00093" summary="fixed redirect to dialog prompt after register">
+      <option name="closed" value="true" />
+      <created>1713346978444</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1713346978444</updated>
+    </task>
+    <task id="LOCAL-00094" summary="removed useSession hook due to faulty implementation">
+      <option name="closed" value="true" />
+      <created>1713347009198</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1713347009198</updated>
+    </task>
+    <task id="LOCAL-00095" summary="added tooltip for additional information on the event">
+      <option name="closed" value="true" />
+      <created>1713365696549</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1713365696549</updated>
+    </task>
+    <task id="LOCAL-00096" summary="added tooltip.js package">
+      <option name="closed" value="true" />
+      <created>1713365716868</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1713365716868</updated>
+    </task>
+    <task id="LOCAL-00097" summary="commented/removed unnecessary logs">
+      <option name="closed" value="true" />
+      <created>1713365751306</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1713365751306</updated>
+    </task>
+    <task id="LOCAL-00098" summary="removed john doe placeholder for new users">
+      <option name="closed" value="true" />
+      <created>1713365794257</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1713365794257</updated>
+    </task>
+    <task id="LOCAL-00099" summary="changed groups placeholder for a better understanding">
+      <option name="closed" value="true" />
+      <created>1713365816700</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1713365816700</updated>
+    </task>
+    <task id="LOCAL-00100" summary="added Analytics from vercel">
+      <option name="closed" value="true" />
+      <created>1714064386777</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1714064386778</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="updating register to remove null values from app" />
+    <MESSAGE value="refactored imports and schema validations" />
+    <MESSAGE value="refactored getServerSession() into auth() due to next-auth v5" />
+    <MESSAGE value="implemented initial view dependent on screen width" />
+    <MESSAGE value="added boilerplate updating (doesn't work)" />
+    <MESSAGE value="added Link on the user profile to access modal" />
+    <MESSAGE value="removed test logs" />
+    <MESSAGE value="remove test log" />
+    <MESSAGE value="new SessionProvider and new styling" />
+    <MESSAGE value="added margin to the nav" />
+    <MESSAGE value="new handleclose that resets the search params when closing the modal" />
+    <MESSAGE value="removed mandatory input of password" />
+    <MESSAGE value="removed skeleton and modified sizing" />
+    <MESSAGE value="removed unused signIn and commented code" />
+    <MESSAGE value="added sharp package (demanded by next for optimizations)" />
+    <MESSAGE value="removed SessionProvider (wrong implementation)" />
+    <MESSAGE value="added try again button if unsuccessful load of the calendar" />
+    <MESSAGE value="fixed redirect to dialog prompt after register" />
+    <MESSAGE value="removed useSession hook due to faulty implementation" />
+    <MESSAGE value="added tooltip for additional information on the event" />
+    <MESSAGE value="added tooltip.js package" />
+    <MESSAGE value="commented/removed unnecessary logs" />
+    <MESSAGE value="removed john doe placeholder for new users" />
+    <MESSAGE value="changed groups placeholder for a better understanding" />
+    <MESSAGE value="added Analytics from vercel" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Analytics from vercel" />
+  </component>
+</project>
