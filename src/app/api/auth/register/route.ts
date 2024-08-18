@@ -12,12 +12,13 @@ export async function POST(request: Request){
             return NextResponse.json({status: 400, message: "missing fields"});
         }
 
-        const verifyEmailExists = await sql`
-                                                                SELECT * 
-                                                                FROM users 
-                                                                WHERE email = ${parsedEmail}`;
+        const verifyEmailExists = await sql`SELECT * FROM users WHERE email = ${parsedEmail}`;
 
-        if(verifyEmailExists.rowCount > 0){
+        if(verifyEmailExists.rowCount == null){
+            return NextResponse.json({status: 500, message: "Internal server error"});
+        }
+
+        if(verifyEmailExists.rowCount! > 0){
             return NextResponse.json({status: 400, message: "email already exists"});
         }
 

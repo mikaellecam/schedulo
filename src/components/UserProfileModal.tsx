@@ -51,14 +51,12 @@ export default function UserProfileModal({user} : Props) {
             },
             body: JSON.stringify({name, groups, email, newPassword}),
         });
-        if(response.status === 400) {
-            setErrorMessage("Email already exists");
-            return;
-        } else if(response.status === 500) {
-            setErrorMessage("Internal server error");
+        const json = await response.json();
+
+        if(response.status === 400 || response.status === 500) {
+            setErrorMessage(json["message"]);
             return;
         }
-
 
         toast({title: "User information updated", duration: 5000});
         return;

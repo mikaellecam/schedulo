@@ -14,6 +14,11 @@ export async function POST(request: Request) {
         const {name, groups, email, newPassword} = dataBaseUserSchema.parse(json);
 
         const verifyEmailExists = await sql`SELECT * FROM users WHERE email = ${email}`;
+
+        if(verifyEmailExists.rowCount == null){
+            return NextResponse.json({status: 500, message: "Internal server error"});
+        }
+
         if(verifyEmailExists.rowCount > 0 && verifyEmailExists.rows[0].email !== session.user.email){
             return NextResponse.json({status: 400, message: "email already exists"});
         }

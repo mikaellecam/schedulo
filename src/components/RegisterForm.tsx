@@ -46,8 +46,8 @@ export default function RegisterForm() {
         });
         const json = await response.json();
 
-        if(json["status"] === 400){
-            setErrorMessage("Email already exists")
+        if(json["status"] === 400 || json["status"] === 500){
+            setErrorMessage(json["message"]);
             return;
         }
 
