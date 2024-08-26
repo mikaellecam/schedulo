@@ -11,7 +11,7 @@ export async function POST(request: Request) {
 
         const json = await request.json();
 
-        const {name, groups, email, newPassword} = dataBaseUserSchema.parse(json);
+        const {name, calendar_url, email, newPassword} = dataBaseUserSchema.parse(json);
 
         const verifyEmailExists = await sql`SELECT * FROM users WHERE email = ${email}`;
 
@@ -25,7 +25,7 @@ export async function POST(request: Request) {
 
         await sql`
                 UPDATE users
-                SET name = ${name}, groups = ${groups}, email = ${email}
+                SET name = ${name}, calendar_url = ${calendar_url}, email = ${email}
                 WHERE id = ${session.user.id}
             `;
 

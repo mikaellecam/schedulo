@@ -18,17 +18,18 @@ export default function Calendar(){
     const [tryAgain, setTryAgain] = useState(false);
 
     useEffect(() => {
-            fetch("/api/calendar")
-                .then(response => response.json())
-                .then(json => {
-                    setEvents(json.data);
-                    setLoading(false);
-                })
-                .catch(error => {
-                    console.error("Error fetching events :", error);
-                    setLoadingMessage("Error fetching data");
-                    setTryAgain(true);
-                });
+        setLoading(true);
+        fetch("/api/calendar")
+            .then(response => response.json())
+            .then(json => {
+                setEvents(json.data);
+                setLoading(false);
+            })
+            .catch(error => {
+                console.error("Error fetching events :", error);
+                setLoadingMessage("Error fetching data");
+                setTryAgain(true);
+            });
     }, []);
 
     useEffect(() => {

@@ -7,13 +7,13 @@ export const userSchema = z.object({
     id: z.string(),
     email: z.string().email(),
     name: z.string(),
-    groups: z.string(),
+    calendar_url: z.string(),
 });
 
 export const dataBaseUserSchema = z.object({
     email: z.string().email(),
     newPassword: z.string(),
     name: z.string(),
-    groups: z.string(),
+    calendar_url: z.string(),
 });
 

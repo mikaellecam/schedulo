@@ -2,9 +2,9 @@ import {NextResponse} from "next/server";
 import { auth } from "../../../auth";
 import ical from 'ical.js';
 
-const groupLink = "https://ade-web-consult.univ-amu.fr/jsp/custom/modules/plannings/anonymous_cal.jsp?projectId=8&resources=644&calType=ical&firstDate=2024-01-01&lastDate=2024-07-01";
-const groupPPPE = "https://ade-web-consult.univ-amu.fr/jsp/custom/modules/plannings/anonymous_cal.jsp?projectId=8&resources=125727&calType=ical&firstDate=2024-01-01&lastDate=2024-07-01";
-const groupEnglish = "https://ade-web-consult.univ-amu.fr/jsp/custom/modules/plannings/anonymous_cal.jsp?projectId=8&resources=645&calType=ical&firstDate=2024-01-01&lastDate=2024-07-01";
+// const groupLink = "https://ade-web-consult.univ-amu.fr/jsp/custom/modules/plannings/anonymous_cal.jsp?projectId=8&resources=644&calType=ical&firstDate=2024-01-01&lastDate=2024-07-01";
+// const groupPPPE = "https://ade-web-consult.univ-amu.fr/jsp/custom/modules/plannings/anonymous_cal.jsp?projectId=8&resources=125727&calType=ical&firstDate=2024-01-01&lastDate=2024-07-01";
+// const groupEnglish = "https://ade-web-consult.univ-amu.fr/jsp/custom/modules/plannings/anonymous_cal.jsp?projectId=8&resources=645&calType=ical&firstDate=2024-01-01&lastDate=2024-07-01";
 
 export async function GET(){
     const session = await auth();
@@ -48,7 +48,7 @@ export async function GET(){
         });
         let parsedEventsPPPE = veventsPPPE.map(vevent => {
            const event = new ical.Event(vevent);
-           if(verifyPPPEGroup(event.summary, session.user.groups.at(-1))){
+           if(verifyPPPEGroup(event.summary, session.user.calendar_url.at(-1))){
                return {
                    title: event.summary,
                    description: event.description,
@@ -60,7 +60,7 @@ export async function GET(){
         });
         let parsedEventsEnglish = veventsEnglish.map(vevent => {
             const event = new ical.Event(vevent);
-            if(filterEnglishLesson(event.summary, session.user.groups.at(-3), true)){
+            if(filterEnglishLesson(event.summary, session.user.calendar_url.at(-3), true)){
                 return {
                     title: event.summary,
                     description: event.description,
