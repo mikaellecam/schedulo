@@ -24,7 +24,7 @@ export default async function TimeTable(){
             <Suspense>
                 <UserProfileModal user={{
                     name: session.user.name,
-                    groups: session.user.groups,
+                    calendar_url: session.user.calendar_url,
                     email: session.user.email
                 }}/>
             </Suspense>

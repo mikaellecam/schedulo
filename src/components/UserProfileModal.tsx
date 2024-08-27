@@ -17,14 +17,14 @@ import {useForm} from "react-hook-form";
 type Props = {
     user: {
         name: string,
-        groups: string,
+        calendar_url: string,
         email: string,
     },
 };
 
 const formSchema = z.object({
     name: z.string().min(1, "Cannot be empty"),
-    groups: z.string().min(1, "Cannot be empty"),
+    calendar_url: z.string().min(1, "Cannot be empty"),
     email: z.string().email("Cannot be empty"),
     newPassword: z.string()
 });
@@ -36,20 +36,20 @@ export default function UserProfileModal({user} : Props) {
        resolver: zodResolver(formSchema),
        defaultValues: {
            name: user.name ? user.name : "",
-           groups: user.groups ? user.groups : "",
+           calendar_url: user.calendar_url ? user.calendar_url : "",
            email: user.email,
            newPassword: "",
        }
     });
 
 
-    const handleSubmit = async ({name, groups, email, newPassword}: z.infer<typeof formSchema>) => {
+    const handleSubmit = async ({name, calendar_url, email, newPassword}: z.infer<typeof formSchema>) => {
         const response = await fetch("/api/updateUser", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({name, groups, email, newPassword}),
+            body: JSON.stringify({name, calendar_url, email, newPassword}),
         });
         const json = await response.json();
 
@@ -87,12 +87,12 @@ export default function UserProfileModal({user} : Props) {
 
                         <FormField
                             control={form.control}
-                            name="groups"
+                            name="calendar_url"
                             render={({field}) => (
                                 <FormItem>
-                                    <FormLabel>Groups:</FormLabel>
+                                    <FormLabel>Calendar Url:</FormLabel>
                                     <FormControl>
-                                        <Input {...field} type="text" placeholder="TD TP Ang PPPE (2 2 3 3)" className="border-2 border-gray-800" />
+                                        <Input {...field} type="text" placeholder="https://ade...." className="border-2 border-gray-800" />
                                     </FormControl>
                                     <FormMessage/>
                                 </FormItem>

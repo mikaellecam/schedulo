@@ -11,7 +11,7 @@ declare module "next-auth" {
             id: string,
             email: string,
             name: string,
-            groups: string,
+            calendar_url: string,
         } & DefaultSession["user"];
     }
 }
@@ -20,14 +20,14 @@ interface ExtendedUser extends User{
     id: string;
     email: string;
     name: string;
-    groups: string;
+    calendar_url: string;
 }
 
 interface ExtendedJWT extends JWT {
     id: string;
     email: string;
     name: string;
-    groups: string;
+    calendar_url: string;
 }
 
 
@@ -68,7 +68,7 @@ export const {
                             id: resultRow.id,
                             email: resultRow.email,
                             name: resultRow.name,
-                            groups: resultRow.groups
+                            calendar_url: resultRow.calendar_url
                         };
                     }
                     return null;
@@ -85,7 +85,7 @@ export const {
                 token.id = parsedUser.id;
                 token.email = parsedUser.email;
                 token.name = parsedUser.name;
-                token.groups = parsedUser.groups;
+                token.calendar_url = parsedUser.calendar_url;
             }
             return token as ExtendedJWT;
         },
@@ -94,7 +94,7 @@ export const {
                 session.user.id = token.id as string;
                 session.user.name = token.name as string;
                 session.user.email = token.email as string;
-                session.user.groups = token.groups as string;
+                session.user.calendar_url = token.calendar_url as string;
             }
             return session;
         }
