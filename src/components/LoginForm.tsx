@@ -2,6 +2,7 @@
 
 import React, {useState} from "react";
 import {zodResolver} from "@hookform/resolvers/zod";
+import { loginFormSchema } from "@/lib/definitions";
 import {useForm} from "react-hook-form";
 import {z} from "zod";
 import {signIn} from "next-auth/react";
@@ -19,27 +20,23 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 
-const formSchema = z.object({
-    email: z.string().email(),
-    password: z.string().min(6),
-});
 
 export default function LoginForm() {
     const router = useRouter();
     const [errorMessage, setErrorMessage] = useState("");
 
-    const form = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
+    const form = useForm<z.infer<typeof loginFormSchema>>({
+        resolver: zodResolver(loginFormSchema),
         defaultValues: {
-            email: "",
+            name: "",
             password: "",
         }
     });
 
-    async function onSubmit(values: z.infer<typeof formSchema>) {
+    async function onSubmit(values: z.infer<typeof loginFormSchema>) {
 
         const response = await signIn("credentials", {
-            email: values["email"],
+            name: values["name"],
             password: values["password"],
             redirect: false,
         });
@@ -49,7 +46,7 @@ export default function LoginForm() {
             return;
         }
         if(response.status === 401){
-            setErrorMessage("Invalid email or password");
+            setErrorMessage("Invalid name or password");
             return;
         }
 
@@ -65,12 +62,12 @@ export default function LoginForm() {
                     <h1 className="text-3xl text-center p-4">Login</h1>
                     <FormField
                         control={form.control}
-                        name="email"
+                        name="name"
                         render={({field}) => (
                             <FormItem className="m-16 space-y-2">
-                                <FormLabel className="text-base">Email</FormLabel>
+                                <FormLabel className="text-base">Name</FormLabel>
                                 <FormControl>
-                                    <Input {...field} className="w-[280px]" placeholder="example@email.com" {...field} />
+                                    <Input {...field} className="w-[280px]" {...field} />
                                 </FormControl>
                                 <FormMessage/>
                             </FormItem>
