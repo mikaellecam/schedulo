@@ -2,14 +2,14 @@ import NextAuth, {type DefaultSession, User} from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import {compare} from 'bcryptjs';
 import {sql} from "@vercel/postgres";
-import { emailSchema, passwordSchema, userSchema } from "./lib/definitions";
+import {nameSchema, passwordSchema, userSchema } from "./lib/definitions";
 import {JWT} from "@auth/core/jwt";
+
 
 declare module "next-auth" {
     interface Session{
         user: {
             id: string,
-            email: string,
             name: string,
             calendar_url: string,
         } & DefaultSession["user"];
@@ -18,14 +18,12 @@ declare module "next-auth" {
 
 interface ExtendedUser extends User{
     id: string;
-    email: string;
     name: string;
     calendar_url: string;
 }
 
 interface ExtendedJWT extends JWT {
     id: string;
-    email: string;
     name: string;
     calendar_url: string;
 }
@@ -44,17 +42,17 @@ export const {
     providers: [
         CredentialsProvider({
             credentials: {
-                email: {},
+                name: {},
                 password: {}
             },
             async authorize(credentials, req): Promise<ExtendedUser | null>{
                 try{
-                    if(!credentials?.email || !credentials?.password) return null;
-                    const parsedEmail = emailSchema.parse(credentials.email);
+                    if(!credentials?.name || !credentials?.password) return null;
+                    const parsedName = nameSchema.parse(credentials.name);
                     const parsedPassword = passwordSchema.parse(credentials.password);
 
                     const response = await sql`
-                    SELECT * FROM users WHERE email = ${parsedEmail}
+                    SELECT * FROM users WHERE name = ${parsedName}
                     `;
 
                     const resultRow =  response.rows[0];
@@ -66,7 +64,6 @@ export const {
                     if(passwordCorrect){
                         return {
                             id: resultRow.id,
-                            email: resultRow.email,
                             name: resultRow.name,
                             calendar_url: resultRow.calendar_url
                         };
@@ -83,7 +80,6 @@ export const {
             if(user){
                 const parsedUser= userSchema.parse(user);
                 token.id = parsedUser.id;
-                token.email = parsedUser.email;
                 token.name = parsedUser.name;
                 token.calendar_url = parsedUser.calendar_url;
             }
@@ -93,7 +89,6 @@ export const {
             if(token){
                 session.user.id = token.id as string;
                 session.user.name = token.name as string;
-                session.user.email = token.email as string;
                 session.user.calendar_url = token.calendar_url as string;
             }
             return session;

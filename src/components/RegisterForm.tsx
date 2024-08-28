@@ -6,6 +6,7 @@ import {z} from "zod";
 import React, {useState} from "react";
 import {signIn} from "next-auth/react";
 import {useRouter} from 'next/navigation'
+import { registrationFormSchema } from "@/lib/definitions";
 
 import { Button } from "@/components/ui/button"
 import {
@@ -18,30 +19,27 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 
-const formSchema = z.object({
-    email: z.string().email(),
-    password: z.string().min(6),
-});
-
 
 export default function RegisterForm() {
     const router = useRouter();
     const [errorMessage, setErrorMessage] = useState("");
 
-    const form = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
+    const form = useForm<z.infer<typeof registrationFormSchema>>({
+        resolver: zodResolver(registrationFormSchema),
         defaultValues: {
-            email: "",
+            name: "",
             password: "",
+            calendar_url: "",
         }
     });
 
-    async function onSubmit(values: z.infer<typeof formSchema>) {
+    async function onSubmit(values: z.infer<typeof registrationFormSchema>) {
         const response = await fetch("/api/auth/register", {
             method: "POST",
             body: JSON.stringify({
-                email: values["email"],
-                password: values["password"]
+                name: values["name"],
+                password: values["password"],
+                calendar_url: values["calendar_url"],
             }),
         });
         const json = await response.json();
@@ -52,13 +50,13 @@ export default function RegisterForm() {
         }
 
         await signIn("credentials", {
-            email: values["email"],
+            name: values["name"],
             password: values["password"],
             redirect: false,
         });
 
         if (json["status"] === 201) {
-            router.push("/timetable?showDialog=y");
+            router.push("/timetable");
             router.refresh();
         } else {
             setErrorMessage("Internal server error");
@@ -76,13 +74,13 @@ export default function RegisterForm() {
                     <h1 className="text-3xl text-center p-4">Register</h1>
                     <FormField
                         control={form.control}
-                        name="email"
+                        name="name"
                         render={({field}) => (
                             <FormItem className="m-16 space-y-2">
-                                <FormLabel className="text-base">Email</FormLabel>
+                                <FormLabel className="text-base">Name</FormLabel>
                                 <FormControl>
                                     <Input {...field} className="w-[280px]"
-                                           placeholder="example@email.com" {...field} />
+                                           placeholder="ex: John" />
                                 </FormControl>
                                 <FormMessage/>
                             </FormItem>
@@ -104,6 +102,19 @@ export default function RegisterForm() {
                             </FormItem>
                         )}
                     />
+                    <FormField
+                        control={form.control}
+                        name="calendar_url"
+                        render={({field}) => (
+                            <FormItem className="m-16">
+                                <FormLabel className="text-base">Calendar URL</FormLabel>
+                                <FormControl>
+                                    <Input {...field} className="w-[280px]" placeholder="https://ade-web..." type="text"/>
+                                </FormControl>
+                                <FormMessage/>
+                            </FormItem>
+                        )}
+                    />
                     {errorMessage && <p className="text-red-500">{errorMessage}</p>}
                     <div className="text-sm text-gray-500">Already have an account?{" "}
                         <a className="relative group" href="/auth/login">
@@ -114,7 +125,6 @@ export default function RegisterForm() {
                                 className="absolute -bottom-1 right-1/2 w-0 h-0.5 bg-blue-900 group-hover:w-1/2 group-hover:transition-all"></span>
                         </a>
                     </div>
-
                     <Button type="submit" variant="outline" className="m-4">Register</Button>
                 </form>
             </div>
